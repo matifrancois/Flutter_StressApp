@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:stressapp/screens/home/settings_form.dart';
 import 'package:stressapp/services/auth.dart';
 import 'package:stressapp/services/database.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,7 @@ class Home extends StatelessWidget {
           builder: (context) {
             return Container(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-              child: Text('bottom sheet'),
+              child: SettingsForm(),
             );
           });
     }
