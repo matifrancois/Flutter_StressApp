@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+const NUMOFCOLORS = 3; //Green, yellow and red
+const GREEN = 0;
+const YELLOW = 1;
+const RED = 2;
+
 const textInputDecoration = InputDecoration(
 
     ///*Pondria el hintText si quisiera que todos digan lo mismo, pero no va a ser el caso casi nunca, entonces la mejor forma es con el metodo copyWith al usarlo como usamos aca. */

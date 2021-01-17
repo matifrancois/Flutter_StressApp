@@ -12,12 +12,13 @@ class StressList extends StatefulWidget {
 class _StressListState extends State<StressList> {
   @override
   Widget build(BuildContext context) {
-    final stress = Provider.of<List<Stress>>(context);
-    stress.forEach((stress) {
-      print(stress.name);
-      print(stress.description);
-      print(stress.stress);
-    });
+    // el [] es porque al principio sino te tira error porque no existe.
+    final stress = Provider.of<List<Stress>>(context) ?? [];
+    // stress.forEach((stress) {
+    //   print(stress.name);
+    //   print(stress.description);
+    //   print(stress.stress);
+    // });
 
     return ListView.builder(
         itemCount: stress.length,

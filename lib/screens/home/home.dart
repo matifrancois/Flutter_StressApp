@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:stressapp/screens/home/settings_form.dart';
 import 'package:stressapp/services/auth.dart';
@@ -29,10 +28,9 @@ class Home extends StatelessWidget {
     return StreamProvider<List<Stress>>.value(
       value: DatabaseService().stress,
       child: Scaffold(
-        backgroundColor: Colors.brown[50],
         appBar: AppBar(
           title: Text('StressApp'),
-          backgroundColor: Colors.brown[400],
+          backgroundColor: Colors.blueGrey[800],
           elevation: 0.0,
           //las actions son widgets que apareceran en la appBar
           actions: <Widget>[
@@ -40,16 +38,24 @@ class Home extends StatelessWidget {
               onPressed: () async {
                 await _auth.signOut();
               },
-              icon: Icon(Icons.person),
-              label: Text('logout'),
+              icon: Icon(Icons.person, color: Colors.white),
+              label: Text('Logout', style: TextStyle(color: Colors.white)),
             ),
             FlatButton.icon(
                 onPressed: () => _showSettingsPanel(),
-                icon: Icon(Icons.settings),
-                label: Text('settings'))
+                icon: Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
+                label: Text('State', style: TextStyle(color: Colors.white)))
           ],
         ),
-        body: StressList(),
+        body: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/background.jpg'),
+                    fit: BoxFit.cover)),
+            child: StressList()),
       ),
     );
   }

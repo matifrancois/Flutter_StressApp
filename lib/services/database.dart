@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:stressapp/models/stress.dart';
+import 'package:stressapp/models/user.dart';
 
 class DatabaseService {
   final String uid;
@@ -28,8 +29,28 @@ class DatabaseService {
     }).toList();
   }
 
+  //userData from snapshot
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      uid: uid,
+      name: snapshot.data['name'],
+      description: snapshot.data['description'],
+      stress: snapshot.data['stress'],
+    );
+  }
+
   //get  stress steam
   Stream<List<Stress>> get stress {
     return stressCollection.snapshots().map(_stressListFromSnapshot);
+  }
+
+  // Esto toma el cable a firebase de nuestro documento de firebase con el uid, y cada vez que hay un cambio
+  //y retorna con la funcion _userDataFromSnapshot el userData
+  //get user doc stream
+  Stream<UserData> get userData {
+    return stressCollection
+        .document(uid)
+        .snapshots()
+        .map(_userDataFromSnapshot);
   }
 }
