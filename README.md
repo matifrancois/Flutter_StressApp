@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <img src="Assets/logoStressApp.png" alt="StressApp" width="200">
+  <img src="assets/logoStressApp.png" alt="StressApp" width="200">
   <br>
   Stress App
   <br>
