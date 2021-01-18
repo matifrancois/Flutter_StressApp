@@ -7,12 +7,12 @@ class Loading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       //el color de fondo del container (el background color)
-      color: Colors.brown[100],
+      color: Colors.white,
       //para que este en el centro de la pantalla.
       child: Center(
         //uso el spinKitChasingDots pero podemos usar el que queramos dentro de los disponibles
-        child: SpinKitChasingDots(
-          color: Colors.brown,
+        child: SpinKitWave(
+          color: Colors.teal[400],
           size: 50.0,
         ),
       ),

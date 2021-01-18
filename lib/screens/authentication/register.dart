@@ -27,15 +27,16 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
+            backgroundColor: Colors.white,
             appBar: AppBar(
-              backgroundColor: Colors.brown[400],
+              backgroundColor: Colors.blueGrey[800],
               elevation: 0.0,
               title: Text('Sign up'),
               actions: <Widget>[
                 FlatButton.icon(
-                    icon: Icon(Icons.person),
-                    label: Text('Sing in'),
+                    icon: Icon(Icons.person, color: Colors.white),
+                    label:
+                        Text('Sing in', style: TextStyle(color: Colors.white)),
                     onPressed: () => {
                           //widget regiere a todo este widget Register
                           widget.toggleView()
@@ -98,7 +99,7 @@ class _RegisterState extends State<Register> {
                             }
                           }
                         },
-                        color: Colors.pink[400],
+                        color: Colors.teal[400],
                         child: Text(
                           'Register',
                           style: TextStyle(color: Colors.white),
