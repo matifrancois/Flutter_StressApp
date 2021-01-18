@@ -51,9 +51,6 @@ $ flutter run
 ![App Working](Demo/StressApp.gif)
 
 
-![App Working](Demo/StressApp_small.gif)
-
-
 
 
 
